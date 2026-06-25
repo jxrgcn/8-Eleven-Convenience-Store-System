@@ -1,0 +1,80 @@
+<section id="view-dashboard" class="view-content">
+    <!-- KPI Row -->
+    <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:16px; margin-bottom:24px;">
+        <div class="kpi-card">
+            <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:12px;">
+                <span style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.07em;color:#9ab89c;font-family:'Poppins',sans-serif;">Today's Sales</span>
+                <div style="width:36px;height:36px;border-radius:10px;background:linear-gradient(135deg,rgba(245,166,35,0.15),rgba(140,198,63,0.15));display:flex;align-items:center;justify-content:center;">
+                    <i data-lucide="sun" style="width:18px;height:18px;color:#f5a623;"></i>
+                </div>
+            </div>
+            <div class="kpi-number" id="kpi-sales-today">₱0.00</div>
+            <div style="font-size:11px;color:#9ab89c;margin-top:4px;">Last 24 hours</div>
+        </div>
+        <div class="kpi-card">
+            <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:12px;">
+                <span style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.07em;color:#9ab89c;font-family:'Poppins',sans-serif;">This Week</span>
+                <div style="width:36px;height:36px;border-radius:10px;background:linear-gradient(135deg,rgba(140,198,63,0.15),rgba(45,122,31,0.1));display:flex;align-items:center;justify-content:center;">
+                    <i data-lucide="calendar-days" style="width:18px;height:18px;color:#8cc63f;"></i>
+                </div>
+            </div>
+            <div class="kpi-number" id="kpi-sales-week">₱0.00</div>
+            <div style="font-size:11px;color:#9ab89c;margin-top:4px;">Last 7 days</div>
+        </div>
+        <div class="kpi-card">
+            <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:12px;">
+                <span style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.07em;color:#9ab89c;font-family:'Poppins',sans-serif;">This Month</span>
+                <div style="width:36px;height:36px;border-radius:10px;background:linear-gradient(135deg,rgba(45,122,31,0.12),rgba(140,198,63,0.1));display:flex;align-items:center;justify-content:center;">
+                    <i data-lucide="calendar-range" style="width:18px;height:18px;color:#4a9e2f;"></i>
+                </div>
+            </div>
+            <div class="kpi-number" id="kpi-sales-month">₱0.00</div>
+            <div style="font-size:11px;color:#9ab89c;margin-top:4px;">Last 30 days</div>
+        </div>
+    </div>
+
+    <div class="panel" style="margin-bottom:24px;">
+        <div class="panel-header"><h3>Weekly Sales Trend</h3></div>
+        <div id="sales-trend-chart" class="sales-trend-graph"></div>
+    </div>
+
+    <!-- Tables Row -->
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
+        <!-- Stock Alerts -->
+        <div class="panel">
+            <div class="panel-header">
+                <h3 style="display:flex;align-items:center;gap:8px;"><i data-lucide="alert-triangle" style="width:16px;height:16px;color:#e8940a;"></i> Stock Alerts</h3>
+                <span class="badge badge-amber" id="count-stock-alerts">0 items</span>
+            </div>
+            <div style="overflow-x:auto; max-height:280px; overflow-y:auto;">
+                <table class="data-table">
+                    <thead><tr>
+                        <th>Product</th>
+                        <th>Variant</th>
+                        <th style="text-align:right;">Stock</th>
+                        <th style="text-align:center;">Status</th>
+                    </tr></thead>
+                    <tbody id="table-body-stock-alerts"></tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Best Sellers -->
+        <div class="panel">
+            <div class="panel-header">
+                <h3 style="display:flex;align-items:center;gap:8px;"><i data-lucide="trending-up" style="width:16px;height:16px;color:#4a9e2f;"></i> Best Sellers</h3>
+                <span class="badge badge-green">All time</span>
+            </div>
+            <div style="overflow-x:auto; max-height:280px; overflow-y:auto;">
+                <table class="data-table">
+                    <thead><tr>
+                        <th>Product</th>
+                        <th style="text-align:right;">Units Sold</th>
+                        <th style="text-align:right;">Revenue</th>
+                    </tr></thead>
+                    <tbody id="table-body-bestsellers"></tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</section>

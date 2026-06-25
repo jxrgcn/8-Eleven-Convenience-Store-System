@@ -1,0 +1,53 @@
+<section id="view-stockin" class="view-content">
+    <div class="page-header">
+        <h2>Stock-In / Restock</h2>
+        <p>Log supplier deliveries and update inventory quantities.</p>
+    </div>
+    <div style="display:grid;grid-template-columns:300px 1fr;gap:20px;align-items:start;">
+        <!-- Form -->
+        <div class="panel">
+            <div class="panel-header"><h3 style="display:flex;align-items:center;gap:8px;"><i data-lucide="plus-circle" style="width:15px;height:15px;color:#4a9e2f;"></i> Log Delivery</h3></div>
+            <form onsubmit="handlePostStockIn(event)" style="padding:18px;display:flex;flex-direction:column;gap:14px;">
+                <div style="display:flex;gap:10px;flex-wrap:wrap;">
+                    <div style="flex:1;min-width:175px;">
+                        <label class="form-label">Search Variant</label>
+                        <input type="text" id="stockin-search-input" class="form-input" placeholder="Search product or variant..." oninput="renderStockInVariantCards()">
+                    </div>
+                </div>
+                <div class="stockin-available-group">
+                    <div class="stockin-section-divider">Available variants</div>
+                    <div id="stockin-variant-cards" style="display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:12px;max-height:240px;overflow-y:auto;padding-right:4px;"></div>
+                </div>
+                <div class="stockin-selected-group">
+                    <div class="stockin-section-divider">Selected variant</div>
+                    <div id="stockin-selected-summary" style="padding:14px;border-radius:18px;background:rgba(232,245,224,0.92);border:1px solid rgba(139,217,142,0.35);font-size:13px;color:#315a2e;">
+                        Select a variant to restock.
+                    </div>
+                </div>
+                <div>
+                    <label class="form-label">Quantity Added</label>
+                    <input type="number" id="stockin-quantity" min="1" required class="form-input" placeholder="Enter quantity to add" oninput="updateStockInSummary()">
+                </div>
+                <button type="submit" class="btn-primary" style="justify-content:center;">
+                    <i data-lucide="plus" style="width:14px;height:14px;"></i> Commit Stock
+                </button>
+            </form>
+        </div>
+        <!-- Log -->
+        <div class="panel">
+            <div class="panel-header"><h3 style="display:flex;align-items:center;gap:8px;"><i data-lucide="history" style="width:15px;height:15px;color:#7a9e7c;"></i> Restock History</h3></div>
+            <div style="overflow-x:auto;">
+                <table class="data-table">
+                    <thead><tr>
+                        <th>Log ID</th>
+                        <th>Product Variant</th>
+                        <th style="text-align:right;">Qty Added</th>
+                        <th>Date & Time</th>
+                        <th>Operator</th>
+                    </tr></thead>
+                    <tbody id="table-body-stockin-logs"></tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</section>

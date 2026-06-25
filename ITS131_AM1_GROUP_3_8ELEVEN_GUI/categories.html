@@ -1,0 +1,22 @@
+<section id="view-categories" class="view-content">
+    <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:24px;flex-wrap:wrap;gap:12px;">
+        <div class="page-header" style="margin-bottom:0;">
+            <h2>Categories</h2>
+            <p>Group products into filtering categories for the store.</p>
+        </div>
+        <form onsubmit="handleCategoryCreate(event)" style="display:flex;gap:8px;">
+            <input type="text" id="category-new-name" required class="form-input" style="width:220px;" placeholder="New category name...">
+            <button type="submit" class="btn-primary"><i data-lucide="plus" style="width:14px;height:14px;"></i> Add</button>
+        </form>
+    </div>
+    <div class="panel" style="max-width:520px;">
+        <table class="data-table">
+            <thead><tr>
+                <th>ID</th>
+                <th>Category Name</th>
+                <th style="text-align:center;">Action</th>
+            </tr></thead>
+            <tbody id="table-body-categories"></tbody>
+        </table>
+    </div>
+</section>

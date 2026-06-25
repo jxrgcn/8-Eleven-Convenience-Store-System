@@ -1,0 +1,23 @@
+<section id="view-inventory" class="view-content">
+    <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:24px;flex-wrap:wrap;gap:12px;">
+        <div class="page-header" style="margin-bottom:0;">
+            <h2>Products & Variants</h2>
+            <p>Manage product catalog with pricing, stock, and variant rules.</p>
+        </div>
+        <button onclick="openProductModal()" class="btn-primary"><i data-lucide="plus-circle" style="width:15px;height:15px;"></i> Add Product</button>
+    </div>
+    <div class="panel">
+        <div style="overflow-x:auto;">
+            <table class="data-table">
+                <thead><tr>
+                    <th>Product ID</th>
+                    <th>Product Name</th>
+                    <th>Category</th>
+                    <th>Variants</th>
+                    <th style="text-align:center;">Actions</th>
+                </tr></thead>
+                <tbody id="table-body-inventory"></tbody>
+            </table>
+        </div>
+    </div>
+</section>

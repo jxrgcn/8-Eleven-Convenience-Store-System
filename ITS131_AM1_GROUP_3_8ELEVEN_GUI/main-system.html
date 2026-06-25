@@ -1,0 +1,172 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>8 Eleven — Inventory & Sales System</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="css/global.css">
+    <script src="js/script.js" defer></script>
+</head>
+<body class="system-page">
+
+<div class="app-shell">
+
+    <!-- SIDEBAR -->
+    <aside id="sidebar" class="hidden flex-col">
+
+        <!-- Logo -->
+        <div class="sidebar-logo-bar p-5 flex items-center gap-3">
+            <img src="img/8eleven logo.png" alt="8 Eleven" style="width:44px; height:44px; object-fit:contain; flex-shrink:0;">
+            <div>
+                <div style="
+                    font-family:'Poppins',sans-serif;
+                    font-weight:800;
+                    font-size:15px;
+                    background:linear-gradient(135deg,#f5a623,#8cc63f);
+                    background-clip:text;
+                    -webkit-background-clip:text;
+                    color:transparent;
+                    -webkit-text-fill-color:transparent;
+                    line-height:1.1;
+                ">
+                    8 ELEVEN
+                </div>
+                <div style="font-size:10px; color:#5a7a5c; font-weight:500; letter-spacing:0.05em; margin-top:1px;">Your Everyday One Stop Store</div>
+            </div>
+        </div>
+
+        <!-- User block -->
+        <div class="user-block flex items-center gap-3">
+            <div class="user-avatar" id="avatar-letters">--</div>
+            <div style="overflow:hidden; flex:1;">
+                <div style="font-family:'Poppins',sans-serif; font-weight:700; font-size:13px; color:#d4e8c4; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;" id="current-user-fullname">Loading...</div>
+                <div style="font-size:11px; color:#5a7a5c; text-transform:capitalize; margin-top:1px;" id="current-user-role">Role</div>
+            </div>
+        </div>
+
+        <!-- Nav -->
+        <nav style="flex:1; padding:12px 10px; overflow-y:auto; display:flex; flex-direction:column; gap:3px;">
+            <div class="section-divider" style="margin:8px 6px 6px;"><span>Main</span></div>
+            <button onclick="switchView('dashboard')" id="nav-dashboard" class="nav-item"><i data-lucide="layout-dashboard" style="width:16px;height:16px;flex-shrink:0;"></i><span>Dashboard</span></button>
+            <button onclick="switchView('pos')" id="nav-pos" class="nav-item"><i data-lucide="shopping-cart" style="width:16px;height:16px;flex-shrink:0;"></i><span>Sales / POS Terminal</span></button>
+
+            <div class="section-divider" style="margin:10px 6px 6px;"><span>Inventory</span></div>
+            <button onclick="switchView('inventory')" id="nav-inventory" class="nav-item"><i data-lucide="package" style="width:16px;height:16px;flex-shrink:0;"></i><span>Products & Variants</span></button>
+            <button onclick="switchView('categories')" id="nav-categories" class="nav-item"><i data-lucide="layers" style="width:16px;height:16px;flex-shrink:0;"></i><span>Categories</span></button>
+            <button onclick="switchView('stockin')" id="nav-stockin" class="nav-item"><i data-lucide="arrow-down-to-line" style="width:16px;height:16px;flex-shrink:0;"></i><span>Restock</span></button>
+
+            <div class="section-divider" style="margin:10px 6px 6px;"><span>Reports</span></div>
+            <button onclick="switchView('transactions')" id="nav-transactions" class="nav-item"><i data-lucide="file-text" style="width:16px;height:16px;flex-shrink:0;"></i><span>Transaction Reports</span></button>
+            <button onclick="switchView('utilities')" id="nav-utilities" class="nav-item"><i data-lucide="database" style="width:16px;height:16px;flex-shrink:0;"></i><span>System Utilities</span></button>
+        </nav>
+        <div id="sidebar-approval-container"></div>
+
+        <!-- Logout -->
+        <div style="padding:16px 18px; border-top:1px solid rgba(255,255,255,0.08);">
+            <button onclick="logout()" style="width:100%; display:flex; align-items:center; gap:10px; padding:12px 16px; border-radius:16px; background:rgba(255,255,255,0.06); border:none; color:#f3d0ca; font-size:13px; font-weight:700; cursor:pointer; font-family:'Poppins',sans-serif; transition:background 0.18s ease, transform 0.18s ease;" onmouseover="this.style.background='rgba(255,255,255,0.12)'; this.style.transform='translateY(-1px)'" onmouseout="this.style.background='rgba(255,255,255,0.06)'; this.style.transform='translateY(0)'">
+                <i data-lucide="log-out" style="width:16px;height:16px;"></i><span>Sign Out</span>
+            </button>
+        </div>
+    </aside>
+
+    <!-- MAIN AREA -->
+    <div class="main-area">
+
+        <!-- Offline Banner -->
+        <div id="offline-banner" class="hidden offline-banner">
+            <span style="display:flex;align-items:center;gap:8px;"><i data-lucide="wifi-off" style="width:15px;height:15px;"></i> Offline — Transactions queued locally.</span>
+            <button onclick="syncOfflineData()" style="font-weight:700; text-decoration:underline; background:none; border:none; color:#3a2000; cursor:pointer;">Sync Now</button>
+        </div>
+
+        <!-- TOP HEADER (hidden on login) -->
+        <div id="top-header" class="hidden top-header">
+            <div>
+                <div style="font-family:'Poppins',sans-serif; font-size:13px; font-weight:700; color:#1a3d1f;" id="page-title-text">Dashboard</div>
+                <div style="font-size:11px; color:#9ab89c;" id="page-subtitle-text">Overview of your store performance</div>
+            </div>
+            <div class="top-header-meta">
+                <div style="font-size:12px; color:#7a9e7c; font-weight:500;" id="header-datetime"></div>
+                <div style="width:1px;height:28px;background:rgba(140,198,63,0.16);"></div>
+                <div class="user-summary">
+                    <div class="user-avatar" style="width:32px;height:32px;font-size:11px;" id="header-avatar">--</div>
+                    <div style="font-size:12px;font-weight:600;color:#2c3e2d;font-family:'Poppins',sans-serif;" id="header-username">User</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SCROLL AREA -->
+        <div class="main-scroll">
+
+            <!-- ==================== DYNAMIC VIEW CONTAINER ==================== -->
+            <div id="view-container"></div>
+
+        </div><!-- /main-scroll -->
+    </div><!-- /main-area -->
+</div><!-- /app-shell -->
+
+<!-- ==================== PRODUCT MODAL ==================== -->
+<div id="product-modal-backdrop" style="position:fixed;inset:0;background:rgba(10,26,12,0.6);backdrop-filter:blur(6px);z-index:100;display:none;align-items:center;justify-content:center;padding:20px;">
+    <div class="modal-card">
+        <div class="modal-header">
+            <h3 id="product-modal-title">Add Product</h3>
+            <button onclick="closeProductModal()" style="background:none;border:none;cursor:pointer;color:#7a9e7c;padding:4px;border-radius:6px;display:flex;align-items:center;justify-content:center;" onmouseover="this.style.color='#1a3d1f'" onmouseout="this.style.color='#7a9e7c'">
+                <i data-lucide="x" style="width:20px;height:20px;"></i>
+            </button>
+        </div>
+
+        <form onsubmit="handleProductModalSubmit(event)" style="overflow-y:auto;flex:1;padding:22px;display:flex;flex-direction:column;gap:18px;">
+            <input type="hidden" id="modal-product-id-field">
+
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;">
+                <div>
+                    <label class="form-label">Product Name</label>
+                    <input type="text" id="modal-product-name" required class="form-input" placeholder="e.g. Piattos, Coca-Cola">
+                </div>
+                <div>
+                    <label class="form-label">Category</label>
+                    <select id="modal-product-category" required class="form-select"></select>
+                </div>
+            </div>
+
+            <div>
+                <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:10px;">
+                    <div style="display:flex;align-items:center;gap:7px;">
+                        <i data-lucide="boxes" style="width:14px;height:14px;color:#8cc63f;"></i>
+                        <span style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.07em;color:#5a7a5c;font-family:'Poppins',sans-serif;">Variants</span>
+                    </div>
+                    <button type="button" onclick="addProductModalVariantRow()" style="display:flex;align-items:center;gap:5px;font-size:12px;font-weight:600;color:#4a9e2f;background:none;border:none;cursor:pointer;font-family:'Poppins',sans-serif;">
+                        <i data-lucide="plus" style="width:13px;height:13px;"></i> Add Variant
+                    </button>
+                </div>
+                <div style="border:1.5px solid #e0eee0;border-radius:12px;overflow:hidden;">
+                    <table style="width:100%;border-collapse:collapse;" class="variant-table">
+                        <thead><tr>
+                            <th>Variant Name</th>
+                            <th>Unit</th>
+                            <th>Price</th>
+                            <th>Stock</th>
+                            <th>Reorder Pt.</th>
+                            <th></th>
+                        </tr></thead>
+                        <tbody id="modal-variants-tbody"></tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div style="display:flex;justify-content:flex-end;gap:10px;padding-top:4px;">
+                <button type="button" onclick="closeProductModal()" class="btn-secondary">Cancel</button>
+                <button type="submit" class="btn-primary">
+                    <i data-lucide="save" style="width:14px;height:14px;"></i> Save Product
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
+</body>
+</html>

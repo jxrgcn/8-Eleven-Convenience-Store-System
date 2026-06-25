@@ -1,0 +1,62 @@
+<section id="view-pos" style="height:calc(100vh - 64px); overflow:hidden;">
+    <div style="display:grid; grid-template-columns:1fr 340px; gap:0; height:100%;">
+
+        <!-- Product Grid -->
+        <div style="display:flex;flex-direction:column;border-right:1px solid rgba(140,198,63,0.14); background:var(--surface-soft); overflow:hidden;">
+            <!-- Search bar -->
+            <div style="padding:18px 22px;background:var(--surface);border-bottom:1px solid rgba(140,198,63,0.12);display:flex;gap:10px;align-items:center;flex-shrink:0;">
+                <div style="position:relative;flex:1;">
+                    <i data-lucide="search" style="width:15px;height:15px;position:absolute;left:11px;top:50%;transform:translateY(-50%);color:#9ab89c;"></i>
+                    <input type="text" id="pos-search-input" oninput="renderPosGrid()" class="form-input" style="padding-left:34px;" placeholder="Search products...">
+                </div>
+                <select id="pos-category-filter" onchange="renderPosGrid()" class="form-select" style="width:160px;"></select>
+            </div>
+            <!-- Grid -->
+            <div style="flex:1;overflow-y:auto;padding:16px;display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:12px;align-content:start;" id="pos-catalog-grid"></div>
+        </div>
+
+        <!-- Cart -->
+        <div style="background:var(--surface);display:flex;flex-direction:column;overflow:hidden;">
+            <div style="padding:18px 20px;border-bottom:1px solid rgba(140,198,63,0.12);background:var(--surface-soft);display:flex;align-items:center;justify-content:space-between;flex-shrink:0;">
+                <div style="display:flex;align-items:center;gap:8px;">
+                    <div style="width:32px;height:32px;border-radius:9px;background:#41932A;display:flex;align-items:center;justify-content:center;">
+                        <i data-lucide="shopping-bag" style="width:16px;height:16px;color:#ffffff;"></i>
+                    </div>
+                    <span style="font-family:'Poppins',sans-serif;font-weight:700;font-size:14px;color:#1a3d1f;">Active Cart</span>
+                </div>
+                <button onclick="clearActiveCart()" style="font-size:11px;color:#e06060;font-weight:600;background:none;border:none;cursor:pointer;font-family:'Poppins',sans-serif;">Clear All</button>
+            </div>
+
+            <div style="flex:1;overflow-y:auto;padding:14px;display:flex;flex-direction:column;gap:10px;" id="pos-cart-container"></div>
+
+            <!-- Summary -->
+            <div style="padding:18px 20px;border-top:1px solid rgba(140,198,63,0.12);background:var(--surface-soft);flex-shrink:0;">
+                <div style="display:flex;flex-direction:column;gap:6px;margin-bottom:14px;">
+                    <div style="display:flex;justify-content:space-between;font-family:'Poppins',sans-serif;font-weight:800;font-size:18px;color:#1a3d1f;">
+                        <span>Total</span><span id="cart-summary-total">₱0.00</span>
+                    </div>
+                </div>
+                <div class="pos-tender-section" style="display:grid;gap:12px;margin-bottom:16px;">
+                    <div>
+                        <label class="form-label" id="pos-tendered-label">Cash Tendered</label>
+                        <input type="number" step="0.01" min="0" id="pos-tendered-input" class="form-input" placeholder="Enter amount" oninput="updateTenderChange()">
+                    </div>
+                    <div>
+                        <label class="form-label">Payment Method</label>
+                        <select id="pos-payment-method" class="form-select" onchange="handlePaymentMethodChange()">
+                            <option value="Cash">Cash</option>
+                            <option value="GCash">GCash</option>
+                        </select>
+                    </div>
+                    <div style="display:flex;justify-content:space-between;align-items:center;gap:12px;font-size:13px;">
+                        <span id="cart-summary-change-label" style="font-weight:700;color:#2d7a1f;">Change Due</span>
+                        <span id="cart-summary-change" style="font-family:'Poppins',sans-serif;font-weight:800;font-size:16px;color:#1a3d1f;">₱0.00</span>
+                    </div>
+                </div>
+                <button onclick="commitCheckoutTransaction()" class="checkout-btn btn-primary" style="width:100%;justify-content:center;padding:14px;font-size:14px;border-radius:13px;">
+                    <i data-lucide="check-circle" style="width:18px;height:18px;"></i> Process Sale
+                </button>
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>8ELEVEN - Inventory & Showcase</title>
+    <link rel="stylesheet" href="css/global.css">
+    <script src="js/index-script.js" defer></script>
+</head>
+<body class="landing-page">
+
+    <header>
+        <div class="header-container">
+            <div class="logo-img">
+                <img src="img/8eleven logo.png" class="logo">
+            </div>
+            
+            <nav class="main-nav" id="top-nav">
+                <a href="#home-section" class="nav-tab active">Home</a>
+                <a href="#about-section" class="nav-tab">About Us</a>
+                <a href="#products-section" class="nav-tab">Products</a>
+                <a href="#contact-section" class="nav-tab">Contact</a>
+                <a href="main-system.html" class="nav-tab login-btn" id="login-nav-btn">Staff Login</a>
+            </nav>
+        </div>
+    </header>
+
+    <div class="scroll-container" id="main-scroll-wrapper">
+
+        <section id="home-section" class="scroll-section">
+            <div class="home-layout">
+                <div class="hero-banner">
+                    <h1>Your Everyday One Stop Store.</h1>
+                    <p>Browse our catalog, check real-time stock availability, and manage store operations seamlessly.</p>
+                    <a href="#products-section" class="cta-btn">Explore our Products</a>
+                </div>
+                
+                <div class="search-sidebar">
+                    <h2>Find a Product</h2>
+                    <div class="form-group">
+                        <label for="search-name">Product Name</label>
+                        <input type="text" id="search-name" placeholder="Name of the Product">
+                    </div>
+                    <div class="form-group">
+                        <label for="search-category">Category</label>
+                        <select id="search-category">
+                            <option value="">Select Category</option>
+                            <option value="beverages">Beverages</option>
+                            <option value="snacks">Snacks</option>
+                            <option value="toiletries">Toiletries</option>
+                            <option value="grains">Grains & Rice</option>
+                            <option value="canned">Canned Goods</option>
+                            <option value="noodles">Instant Noodles</option>
+                            <option value="condiments">Condiments & Sauces</option>
+                            <option value="cleaners">Household Cleaners</option>
+                        </select>
+                    </div>
+                    <button type="button" class="submit-btn" id="search-submit-trigger" style="width: 100%;">Search Inventory</button>
+                </div>
+            </div>
+        </section>
+
+        <section id="about-section" class="scroll-section">
+            <div class="text-content-layout">
+                <h2>About 8ELEVEN</h2>
+                <p>Your neighborhood's trusted store for everyday essentials and efficient inventory management.</p>
+                
+                <div class="about-box">
+                    <h3>Our Background and Mission</h3>
+                    <p>8-Eleven was created to make store operations faster and more organized. Our mission is to provide reliable service through efficient inventory and sales management.</p>
+                    
+                    <h3>Our Purpose & Objectives</h3>
+                    <p>We use a centralized system to manage products, stocks, supplies, and transactions, helping reduce errors and improve daily operations.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="products-section" class="scroll-section">
+            <div class="products-layout">
+                <aside class="sidebar">
+                    <h3>Categories</h3>
+                    <a href="#cat-beverages" class="cat-link">Beverages</a>
+                    <a href="#cat-snacks" class="cat-link">Snacks</a>
+                    <a href="#cat-toiletries" class="cat-link">Toiletries</a>
+                    <a href="#cat-grains" class="cat-link">Grains & Rice</a>
+                    <a href="#cat-canned" class="cat-link">Canned Goods</a>
+                    <a href="#cat-noodles" class="cat-link">Instant Noodles</a>
+                    <a href="#cat-condiments" class="cat-link">Condiments & Sauces</a>
+                    <a href="#cat-cleaners" class="cat-link">Household Cleaners</a>
+                </aside>
+
+                <div class="products-display">
+                    
+                    <div id="cat-beverages" class="category-group" data-category="beverages">
+                        <div class="category-title">Beverages</div>
+                        <div class="product-grid">
+                            <div class="product-card" data-name="coca-cola coke 1.5l">
+                                <div class="image-container"><img src="img/coke.jpg" alt="Coca-Cola" class="product-image"></div>
+                                <div class="product-info"><div class="product-meta"><span class="product-name">Coca-Cola 1.5L</span><span class="stock-badge In-Stock">In Stock</span></div><div class="product-price">₱60.00</div></div>
+                            </div>
+                            <div class="product-card" data-name="pepsi 1.5l">
+                                <div class="image-container"><img src="img/pepsi.jpg" alt="Pepsi" class="product-image"></div>
+                                <div class="product-info"><div class="product-meta"><span class="product-name">Pepsi 1.5L</span><span class="stock-badge In-Stock">In Stock</span></div><div class="product-price">₱65.00</div></div>
+                            </div>
+                            <div class="product-card" data-name="kopiko brown coffee">
+                                <div class="image-container"><img src="img/kopiko.jpg" alt="Kopiko" class="product-image"></div>
+                                <div class="product-info"><div class="product-meta"><span class="product-name">Kopiko Brown Coffee</span><span class="stock-badge In-Stock">In Stock</span></div><div class="product-price">₱16.00</div></div>
+                            </div>
+                            <div class="product-card" data-name="milo sachet 22g">
+                                <div class="image-container"><img src="img/milo.jpg" alt="Milo" class="product-image"></div>
+                                <div class="product-info"><div class="product-meta"><span class="product-name">Milo Sachet 22g</span><span class="stock-badge In-Stock">In Stock</span></div><div class="product-price">₱11.00</div></div>
+                            </div>
+                            <div class="product-card" data-name="nescafe 3-in-1 original">
+                                <div class="image-container"><img src="img/nescafe.jpg" alt="Nescafe" class="product-image"></div>
+                                <div class="product-info"><div class="product-meta"><span class="product-name">Nescafe 3-in-1 Original</span><span class="stock-badge Out-of-Stock">Out of Stock</span></div><div class="product-price">₱16.00</div></div>
+                            </div>
+                            <div class="product-card" data-name="red horse beer 500ml">
+                                <div class="image-container"><img src="img/redhorse.jpg" alt="Red Horse" class="product-image"></div>
+                                <div class="product-info"><div class="product-meta"><span class="product-name">Red Horse Beer 500mL</span><span class="stock-badge In-Stock">In Stock</span></div><div class="product-price">₱70.00</div></div>
+                            </div>
+                            <div class="product-card" data-name="san miguel pale pilsen">
+                                <div class="image-container"><img src="img/sanmig.jpg" alt="San Miguel" class="product-image"></div>
+                                <div class="product-info"><div class="product-meta"><span class="product-name">San Miguel Pale Pilsen</span><span class="stock-badge In-Stock">In Stock</span></div><div class="product-price">₱65.00</div></div>
+                            </div>
+                            <div class="product-card" data-name="sprite 500ml">
+                                <div class="image-container"><img src="img/sprite.jpg" alt="Sprite" class="product-image"></div>
+                                <div class="product-info"><div class="product-meta"><span class="product-name">Sprite 500mL</span><span class="stock-badge Low-Stock">Low Stock</span></div><div class="product-price">₱20.00</div></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="cat-snacks" class="category-group" data-category="snacks">
+                        <div class="category-title">Snacks</div>
+                        <div class="product-grid">
+                            <div class="product-card" data-name="piattos cheese large">
+                                <div class="image-container"><img src="img/piattos.jpg" alt="Piattos" class="product-image"></div>
+                                <div class="product-info"><div class="product-meta"><span class="product-name">Piattos Cheese Large</span><span class="stock-badge In-Stock">In Stock</span></div><div class="product-price">₱38.00</div></div>
+                            </div>
+                            <div class="product-card" data-name="nova country bbq">
+                                <div class="image-container"><img src="img/nova.jpg" alt="Nova" class="product-image"></div>
+                                <div class="product-info"><div class="product-meta"><span class="product-name">Nova Country BBQ</span><span class="stock-badge In-Stock">In Stock</span></div><div class="product-price">₱36.00</div></div>
+                            </div>
+                            <div class="product-card" data-name="clover chips ham cheese">
+                                <div class="image-container"><img src="img/clover.jpg" alt="Clover" class="product-image"></div>
+                                <div class="product-info"><div class="product-meta"><span class="product-name">Clover Chips Ham & Cheese</span><span class="stock-badge Low-Stock">Low Stock</span></div><div class="product-price">₱32.00</div></div>
+                            </div>
+                            <div class="product-card" data-name="chippy bbq flavor">
+                                <div class="image-container"><img src="img/chippy.jpg" alt="Chippy" class="product-image"></div>
+                                <div class="product-info"><div class="product-meta"><span class="product-name">Chippy BBQ Flavor</span><span class="stock-badge In-Stock">In Stock</span></div><div class="product-price">₱30.00</div></div>
+                            </div>
+                            <div class="product-card" data-name="fudgee barr chocolate">
+                                <div class="image-container"><img src="img/fudgee.jpg" alt="Fudgee Barr" class="product-image"></div>
+                                <div class="product-info"><div class="product-meta"><span class="product-name">Fudgee Barr Chocolate</span><span class="stock-badge Out-of-Stock">Out of Stock</span></div><div class="product-price">₱10.00</div></div>
+                            </div>
+                            <div class="product-card" data-name="rebisco crackers plain">
+                                <div class="image-container"><img src="img/rebisco.jpg" alt="Rebisco" class="product-image"></div>
+                                <div class="product-info"><div class="product-meta"><span class="product-name">Rebisco Crackers Plain</span><span class="stock-badge In-Stock">In Stock</span></div><div class="product-price">₱12.00</div></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="cat-toiletries" class="category-group" data-category="toiletries">
+                        <div class="category-title">Toiletries</div>
+                        <div class="product-grid">
+                            <div class="product-card" data-name="safeguard white soap">
+                                <div class="image-container"><img src="img/safeguard.jpg" alt="Safeguard" class="product-image"></div>
+                                <div class="product-info"><div class="product-meta"><span class="product-name">Safeguard White Soap</span><span class="stock-badge In-Stock">In Stock</span></div><div class="product-price">₱45.00</div></div>
+                            </div>
+                            <div class="product-card" data-name="palmolive shampoo 15ml">
+                                <div class="image-container"><img src="img/palmolive.jpg" alt="Palmolive" class="product-image"></div>
+                                <div class="product-info"><div class="product-meta"><span class="product-name">Palmolive Shampoo 15mL</span><span class="stock-badge In-Stock">In Stock</span></div><div class="product-price">₱8.00</div></div>
+                            </div>
+                            <div class="product-card" data-name="sunsilk pink shampoo">
+                                <div class="image-container"><img src="img/sunsilk.jpg" alt="Sunsilk" class="product-image"></div>
+                                <div class="product-info"><div class="product-meta"><span class="product-name">Sunsilk Pink Shampoo</span><span class="stock-badge In-Stock">In Stock</span></div><div class="product-price">₱8.50</div></div>
+                            </div>
+                            <div class="product-card" data-name="colgate toothpaste 150g">
+                                <div class="image-container"><img src="img/colgate.jpg" alt="Colgate" class="product-image"></div>
+                                <div class="product-info"><div class="product-meta"><span class="product-name">Colgate Toothpaste 150g</span><span class="stock-badge Low-Stock">Low Stock</span></div><div class="product-price">₱95.00</div></div>
+                            </div>
+                            <div class="product-card" data-name="creamsilk conditioner green">
+                                <div class="image-container"><img src="img/creamsilk.jpg" alt="Cream Silk" class="product-image"></div>
+                                <div class="product-info"><div class="product-meta"><span class="product-name">Cream Silk Conditioner Green</span><span class="stock-badge In-Stock">In Stock</span></div><div class="product-price">₱9.00</div></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="cat-grains" class="category-group" data-category="grains">
+                        <div class="category-title">Grains & Rice</div>
+                        <div class="product-grid">
+                            <div class="product-card" data-name="sinandomeng rice 1kg">
+                                <div class="image-container"><img src="img/sinandomeng.jpg" alt="Sinandomeng" class="product-image"></div>
+                                <div class="product-info"><div class="product-meta"><span class="product-name">Sinandomeng Rice 1kg</span><span class="stock-badge In-Stock">In Stock</span></div><div class="product-price">₱56.00</div></div>
+                            </div>
+                            <div class="product-card" data-name="dinorado special rice 1kg">
+                                <div class="image-container"><img src="img/dinorado.jpg" alt="Dinorado" class="product-image"></div>
+                                <div class="product-info"><div class="product-meta"><span class="product-name">Dinorado Special Rice 1kg</span><span class="stock-badge In-Stock">In Stock</span></div><div class="product-price">₱65.00</div></div>
+                            </div>
+                            <div class="product-card" data-name="well-milled rice 1kg milled">
+                                <div class="image-container"><img src="img/milled.jpg" alt="Well-Milled" class="product-image"></div>
+                                <div class="product-info"><div class="product-meta"><span class="product-name">Well-Milled Rice 1kg</span><span class="stock-badge Low-Stock">Low Stock</span></div><div class="product-price">₱50.00</div></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="cat-canned" class="category-group" data-category="canned">
+                        <div class="category-title">Canned Goods</div>
+                        <div class="product-grid">
+                            <div class="product-card" data-name="555 sardines tomato sauce">
+                                <div class="image-container"><img src="img/555.jpg" alt="555 Sardines" class="product-image"></div>
+                                <div class="product-info"><div class="product-meta"><span class="product-name">555 Sardines in Tomato Sauce</span><span class="stock-badge In-Stock">In Stock</span></div><div class="product-price">₱22.00</div></div>
+                            </div>
+                            <div class="product-card" data-name="ligo sardines green">
+                                <div class="image-container"><img src="img/ligo.jpg" alt="Ligo Sardines" class="product-image"></div>
+                                <div class="product-info"><div class="product-meta"><span class="product-name">Ligo Sardines Green</span><span class="stock-badge In-Stock">In Stock</span></div><div class="product-price">₱23.00</div></div>
+                            </div>
+                            <div class="product-card" data-name="century tuna flakes oil">
+                                <div class="image-container"><img src="img/century.jpg" alt="Century Tuna" class="product-image"></div>
+                                <div class="product-info"><div class="product-meta"><span class="product-name">Century Tuna Flakes in Oil</span><span class="stock-badge Low-Stock">Low Stock</span></div><div class="product-price">₱38.00</div></div>
+                            </div>
+                            <div class="product-card" data-name="argentina corned beef 150g">
+                                <div class="image-container"><img src="img/argentina.jpg" alt="Argentina Corned Beef" class="product-image"></div>
+                                <div class="product-info"><div class="product-meta"><span class="product-name">Argentina Corned Beef 150g</span><span class="stock-badge Out-of-Stock">Out of Stock</span></div><div class="product-price">₱42.00</div></div>
+                            </div>
+                            <div class="product-card" data-name="cdo meat loaf 150g">
+                                <div class="image-container"><img src="img/cdo.jpg" alt="CDO Meat Loaf" class="product-image"></div>
+                                <div class="product-info"><div class="product-meta"><span class="product-name">CDO Meat Loaf 150g</span><span class="stock-badge In-Stock">In Stock</span></div><div class="product-price">₱28.00</div></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="cat-noodles" class="category-group" data-category="noodles">
+                        <div class="category-title">Instant Noodles</div>
+                        <div class="product-grid">
+                            <div class="product-card" data-name="lucky me pancit canton original og">
+                                <div class="image-container"><img src="img/og.jpg" alt="Lucky Me Original" class="product-image"></div>
+                                <div class="product-info"><div class="product-meta"><span class="product-name">Lucky Me Pancit Canton Original</span><span class="stock-badge In-Stock">In Stock</span></div><div class="product-price">₱17.00</div></div>
+                            </div>
+                            <div class="product-card" data-name="lucky me canton chili mansi chilimansi">
+                                <div class="image-container"><img src="img/chilimansi.jpg" alt="Lucky Me Chilimansi" class="product-image"></div>
+                                <div class="product-info"><div class="product-meta"><span class="product-name">Lucky Me Canton Chili Mansi</span><span class="stock-badge In-Stock">In Stock</span></div><div class="product-price">₱17.00</div></div>
+                            </div>
+                            <div class="product-card" data-name="lucky me canton sweet spicy">
+                                <div class="image-container"><img src="img/sweet.jpg" alt="Lucky Me Sweet Spicy" class="product-image"></div>
+                                <div class="product-info"><div class="product-meta"><span class="product-name">Lucky Me Canton Sweet Spicy</span><span class="stock-badge Low-Stock">Low Stock</span></div><div class="product-price">₱17.00</div></div>
+                            </div>
+                            <div class="product-card" data-name="lucky me instant mami chicken mami">
+                                <div class="image-container"><img src="img/mami.jpg" alt="Lucky Me Mami" class="product-image"></div>
+                                <div class="product-info"><div class="product-meta"><span class="product-name">Lucky Me Instant Mami Chicken</span><span class="stock-badge In-Stock">In Stock</span></div><div class="product-price">₱13.00</div></div>
+                            </div>
+                            <div class="product-card" data-name="payless mami beef">
+                                <div class="image-container"><img src="img/payless.jpg" alt="Payless Mami" class="product-image"></div>
+                                <div class="product-info"><div class="product-meta"><span class="product-name">Payless Mami Beef</span><span class="stock-badge Out-of-Stock">Out of Stock</span></div><div class="product-price">₱13.50</div></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="cat-condiments" class="category-group" data-category="condiments">
+                        <div class="category-title">Condiments & Sauces</div>
+                        <div class="product-grid">
+                            <div class="product-card" data-name="datu puti vinegar 200ml">
+                                <div class="image-container"><img src="img/vinegar.jpg" alt="Datu Puti Vinegar" class="product-image"></div>
+                                <div class="product-info"><div class="product-meta"><span class="product-name">Datu Puti Vinegar 200mL</span><span class="stock-badge In-Stock">In Stock</span></div><div class="product-price">₱12.00</div></div>
+                            </div>
+                            <div class="product-card" data-name="datu puti soy sauce 200ml datuputi_soysauce">
+                                <div class="image-container"><img src="img/datuputi_soysauce.jpg" alt="Datu Puti Soy Sauce" class="product-image"></div>
+                                <div class="product-info"><div class="product-meta"><span class="product-name">Datu Puti Soy Sauce 200mL</span><span class="stock-badge In-Stock">In Stock</span></div><div class="product-price">₱12.00</div></div>
+                            </div>
+                            <div class="product-card" data-name="silver swan soy sauce 1l silverswan_soysauce">
+                                <div class="image-container"><img src="img/silverswan_soysauce.jpg" alt="Silver Swan" class="product-image"></div>
+                                <div class="product-info"><div class="product-meta"><span class="product-name">Silver Swan Soy Sauce 1L</span><span class="stock-badge Low-Stock">Low Stock</span></div><div class="product-price">₱48.00</div></div>
+                            </div>
+                            <div class="product-card" data-name="ufc banana ketchup 320g">
+                                <div class="image-container"><img src="img/ufc.jpg" alt="UFC Ketchup" class="product-image"></div>
+                                <div class="product-info"><div class="product-meta"><span class="product-name">UFC Banana Ketchup 320g</span><span class="stock-badge In-Stock">In Stock</span></div><div class="product-price">₱32.00</div></div>
+                            </div>
+                            <div class="product-card" data-name="magic sarap sachet 8g">
+                                <div class="image-container"><img src="img/magic.jpg" alt="Magic Sarap" class="product-image"></div>
+                                <div class="product-info"><div class="product-meta"><span class="product-name">Magic Sarap Sachet 8g</span><span class="stock-badge In-Stock">In Stock</span></div><div class="product-price">₱6.00</div></div>
+                            </div>
+                            <div class="product-card" data-name="mang tomas all purpose sauce mangtomas">
+                                <div class="image-container"><img src="img/mangtomas.jpg" alt="Mang Tomas" class="product-image"></div>
+                                <div class="product-info"><div class="product-meta"><span class="product-name">Mang Tomas All Purpose Sauce</span><span class="stock-badge Out-of-Stock">Out of Stock</span></div><div class="product-price">₱15.00</div></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="cat-cleaners" class="category-group" data-category="cleaners">
+                        <div class="category-title">Household Cleaners</div>
+                        <div class="product-grid">
+                            <div class="product-card" data-name="surf powder detergent sachet">
+                                <div class="image-container"><img src="img/surf.jpg" alt="Surf" class="product-image"></div>
+                                <div class="product-info"><div class="product-meta"><span class="product-name">Surf Powder Detergent Sachet</span><span class="stock-badge In-Stock">In Stock</span></div><div class="product-price">₱12.00</div></div>
+                            </div>
+                            <div class="product-card" data-name="ariel powder detergent">
+                                <div class="image-container"><img src="img/ariel.jpg" alt="Ariel" class="product-image"></div>
+                                <div class="product-info"><div class="product-meta"><span class="product-name">Ariel Powder Detergent</span><span class="stock-badge Low-Stock">Low Stock</span></div><div class="product-price">₱17.00</div></div>
+                            </div>
+                            <div class="product-card" data-name="downy sunrise fresh sachet">
+                                <div class="image-container"><img src="img/downy.jpg" alt="Downy" class="product-image"></div>
+                                <div class="product-info"><div class="product-meta"><span class="product-name">Downy Sunrise Fresh Sachet</span><span class="stock-badge In-Stock">In Stock</span></div><div class="product-price">₱15.00</div></div>
+                            </div>
+                            <div class="product-card" data-name="joy dishwashing liquid sachet">
+                                <div class="image-container"><img src="img/joy.jpg" alt="Joy" class="product-image"></div>
+                                <div class="product-info"><div class="product-meta"><span class="product-name">Joy Dishwashing Liquid Sachet</span><span class="stock-badge In-Stock">In Stock</span></div><div class="product-price">₱12.00</div></div>
+                            </div>
+                            <div class="product-card" data-name="zonrox bleach original 250ml">
+                                <div class="image-container"><img src="img/zonrox.jpg" alt="Zonrox" class="product-image"></div>
+                                <div class="product-info"><div class="product-meta"><span class="product-name">Zonrox Bleach Original 250mL</span><span class="stock-badge Out-of-Stock">Out of Stock</span></div><div class="product-price">₱18.00</div></div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <section id="contact-section" class="scroll-section">
+            <div class="contact-container">
+                <div class="contact-info-panel">
+                    <h2>Get In Touch</h2>
+                    <p>Drop us a line for wholesale orders or stock check inquiries.</p>
+                    <p><strong>Address:</strong> Phase 8 Jasmine Street, Greenland Exec. Village, Taytay, Rizal</p>
+                    <p><strong>Phone:</strong> 0967 2321 242</p>
+                    <p><strong>Email:</strong> 8-eleven@convenience.store</p>
+                </div>
+                <div class="contact-form">
+                    <div class="form-group">
+                        <label for="contact-name">Full Name</label>
+                        <input type="text" id="contact-name" placeholder="Juan dela Cruz">
+                    </div>
+                    <div class="form-group">
+                        <label for="contact-email">Email Address</label>
+                        <input type="email" id="contact-email" placeholder="juan@email.com">
+                    </div>
+                    <div class="form-group">
+                        <label for="contact-message">Message</label>
+                        <textarea id="contact-message" rows="4" placeholder="Type your message here..."></textarea>
+                    </div>
+                    <button class="submit-btn">Send message</button>
+                </div>
+            </div>
+        </section>
+
+
+        <section id="dashboard-section" class="scroll-section dashboard-hidden">
+            <div class="dashboard-container">
+                <div class="dashboard-header">
+                    <div>
+                        <h2>8ELEVEN Management Dashboard</h2>
+                        <div class="dashboard-welcome">Active Session: <span id="active-staff-user">Staff Member</span></div>
+                    </div>
+                    <button class="logout-btn" id="logout-trigger">System Logout</button>
+                </div>
+
+                <div class="metrics-row">
+                    <div class="metric-card">
+                        <div class="metric-value">37</div>
+                        <div class="metric-label">Total Inventory Items</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-value">7</div>
+                        <div class="metric-label">Low Stock Alerts</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-value">5</div>
+                        <div class="metric-label">Out of Stock Items</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-value">₱24,500.00</div>
+                        <div class="metric-label">Today's Gross Volume</div>
+                    </div>
+                </div>
+
+                <div class="dashboard-grid">
+                    <div class="panel-box">
+                        <h3>Stock Operation Actions</h3>
+                        <div style="display: flex; gap: 12px; margin-top: 16px;">
+                            <button class="submit-btn" style="background-color: #226124;">+ Add New Stock Entry</button>
+                            <button class="submit-btn" style="background-color: #515154;">Generate System Report</button>
+                        </div>
+                    </div>
+                    <div class="panel-box">
+                        <h3>Recent Audit Log Notifications</h3>
+                        <p style="font-size: 13px; color: #6e6e73; margin-top: 12px; line-height: 1.6;">
+                            • User updated stock status for <strong>Lucky Me Pancit Canton Original</strong>.<br>
+                            • Low stock warning triggered: <strong>Sprite 500mL</strong>.<br>
+                            • Administrative session initiated successfully.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </div>
+</body>
+</html>

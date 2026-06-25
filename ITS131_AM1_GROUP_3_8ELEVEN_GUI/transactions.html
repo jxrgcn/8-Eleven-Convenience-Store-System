@@ -1,0 +1,43 @@
+<section id="view-transactions" class="view-content">
+    <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:24px;flex-wrap:wrap;gap:12px;">
+        <div class="page-header" style="margin-bottom:0;">
+            <h2>Transaction Reports</h2>
+            <p>Browse sales history, filter by date, and export data.</p>
+        </div>
+        <div style="display:flex;gap:8px;">
+            <button onclick="exportReportData('csv')" class="btn-secondary"><i data-lucide="download" style="width:14px;height:14px;"></i> Export CSV</button>
+            <button onclick="exportReportData('print')" class="btn-secondary"><i data-lucide="printer" style="width:14px;height:14px;"></i> Print</button>
+        </div>
+    </div>
+
+    <!-- Date filters -->
+    <div class="panel" style="margin-bottom:16px;">
+        <div style="padding:16px 20px;display:flex;align-items:flex-end;gap:16px;flex-wrap:wrap;">
+            <div>
+                <label class="form-label">From Date</label>
+                <input type="date" id="filter-date-start" onchange="renderTransactionLedger()" class="form-input" style="width:auto;">
+            </div>
+            <div>
+                <label class="form-label">To Date</label>
+                <input type="date" id="filter-date-end" onchange="renderTransactionLedger()" class="form-input" style="width:auto;">
+            </div>
+            <button onclick="resetDateFilters()" style="padding:16px 20px;font-size:13px;color:#e06060;font-weight:600;background:none;border:none;cursor:pointer;font-family:'Poppins',sans-serif;">Clear Filters</button>
+        </div>
+    </div>
+
+    <div class="panel">
+        <div style="overflow-x:auto;">
+            <table class="data-table">
+                <thead><tr>
+                    <th>Invoice ID</th>
+                    <th>Date & Time</th>
+                    <th>Items</th>
+                    <th style="text-align:right;">Total Amount</th>
+                    <th>Payment Method</th>
+                    <th>Cashier</th>
+                </tr></thead>
+                <tbody id="table-body-transactions-ledger"></tbody>
+            </table>
+        </div>
+    </div>
+</section>

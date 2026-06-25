@@ -1,0 +1,43 @@
+<section id="view-utilities" class="view-content">
+    <div class="page-header">
+        <h2>System Utilities</h2>
+        <p>Backup and restore your store data securely.</p>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:16px;max-width:700px;">
+        <!-- Backup -->
+        <div class="panel">
+            <div style="padding:24px;display:flex;flex-direction:column;gap:16px;">
+                <div style="display:flex;gap:14px;align-items:flex-start;">
+                    <div style="width:44px;height:44px;border-radius:12px;background:linear-gradient(135deg,rgba(45,122,31,0.15),rgba(140,198,63,0.12));display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+                        <i data-lucide="download-cloud" style="width:20px;height:20px;color:#4a9e2f;"></i>
+                    </div>
+                    <div>
+                        <div style="font-family:'Poppins',sans-serif;font-weight:700;font-size:14px;color:#1a3d1f;margin-bottom:5px;">Export Backup</div>
+                        <div style="font-size:12px;color:#9ab89c;line-height:1.5;">Download a full snapshot of all categories, products, and transactions as a JSON file.</div>
+                    </div>
+                </div>
+                <button onclick="executeSystemBackupDump()" class="btn-primary" style="justify-content:center;">
+                    <i data-lucide="download-cloud" style="width:15px;height:15px;"></i> Download Backup
+                </button>
+            </div>
+        </div>
+        <!-- Restore -->
+        <div class="panel">
+            <div style="padding:24px;display:flex;flex-direction:column;gap:16px;">
+                <div style="display:flex;gap:14px;align-items:flex-start;">
+                    <div style="width:44px;height:44px;border-radius:12px;background:linear-gradient(135deg,rgba(245,166,35,0.15),rgba(220,140,20,0.1));display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+                        <i data-lucide="upload-cloud" style="width:20px;height:20px;color:#e8940a;"></i>
+                    </div>
+                    <div>
+                        <div style="font-family:'Poppins',sans-serif;font-weight:700;font-size:14px;color:#1a3d1f;margin-bottom:5px;">Restore Backup</div>
+                        <div style="font-size:12px;color:#9ab89c;line-height:1.5;">Upload a backup JSON file to restore your store data. This will overwrite current data.</div>
+                    </div>
+                </div>
+                <input type="file" id="utility-restore-file-input" class="hidden" onchange="executeSystemRestoreIngress(event)">
+                <button onclick="document.getElementById('utility-restore-file-input').click()" class="btn-secondary" style="justify-content:center;">
+                    <i data-lucide="upload-cloud" style="width:15px;height:15px;"></i> Upload & Restore
+                </button>
+            </div>
+        </div>
+    </div>
+</section>

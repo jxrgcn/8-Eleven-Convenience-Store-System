@@ -1,0 +1,62 @@
+<section id="view-login" class="view-login">
+    <a href="index.html" class="back-btn">← Back</a>
+    <!-- BG decorative circles -->
+    <div style="position:absolute;top:-80px;right:-80px;width:400px;height:400px;border-radius:50%;background:radial-gradient(circle, rgba(140,198,63,0.12) 0%, transparent 70%);pointer-events:none;"></div>
+    <div style="position:absolute;bottom:-100px;left:-60px;width:350px;height:350px;border-radius:50%;background:radial-gradient(circle, rgba(245,166,35,0.1) 0%, transparent 70%);pointer-events:none;"></div>
+
+    <div class="login-card">
+        <!-- Logo area -->
+        <div class="login-header">
+            <div style="margin-bottom:14px;">
+                <img src="img/8 Eleven Logo Transparent.png" alt="8 Eleven Logo" style="max-width:100px; height:auto; display:inline-block;">
+            </div>
+            <div class="login-subtitle">Inventory & Sales Management System</div>
+            <div class="login-tagline">SHOP • EAT • CHILL</div>
+        </div>
+
+        <div style="margin-bottom:20px;">
+            <div class="form-label">Username</div>
+            <input type="text" id="login-username" class="form-input" placeholder="Enter your username" style="margin-top:4px;" onkeydown="if(event.key==='Enter')document.getElementById('login-password').focus()">
+        </div>
+        <div style="margin-bottom:24px;">
+            <div class="form-label">Password</div>
+            <input type="password" id="login-password" class="form-input" placeholder="••••••••" style="margin-top:4px;" onkeydown="if(event.key==='Enter')handleLoginDirect()">
+        </div>
+        <button onclick="handleLoginDirect()" class="btn-primary login-submit">
+            <i data-lucide="log-in" style="width:16px;height:16px;"></i> Sign In to System
+        </button>
+
+        <div class="account-request-panel">
+            <h4>Create a new account request</h4>
+            <form onsubmit="handleAccountRequest(event)">
+                <div class="form-row">
+                    <div>
+                        <label class="form-label">Full Name</label>
+                        <input type="text" id="request-fullname" class="form-input" placeholder="Enter Full Name" required>
+                    </div>
+                    <div>
+                        <label class="form-label">Username</label>
+                        <input type="text" id="request-username" class="form-input" placeholder="Choose a username" required>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div>
+                        <label class="form-label">Password</label>
+                        <input type="password" id="request-password" class="form-input" placeholder="Create a password" required>
+                    </div>
+                    <div>
+                        <label class="form-label">Role</label>
+                        <select id="request-role" class="form-select" required>
+                            <option value="Cashier">Cashier</option>
+                            <option value="Owner">Owner</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-row full-width" style="align-items:flex-end;">
+                    <div style="font-size:12px;color:#506c4f;line-height:1.5;">New account requests require one owner approval before the account becomes active.</div>
+                    <button type="submit" class="btn-secondary" style="justify-content:center;">Request Account</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>
