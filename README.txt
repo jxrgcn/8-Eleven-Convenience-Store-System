@@ -36,3 +36,19 @@ Keeps a record of every sales transaction processed in the store.
 
 tb_transaction_items
 Stores the individual products included in each transaction, along with their quantity and subtotal.
+
+Login credentials:
+Owner_iza
+Password: Owner#1234!
+
+Owner_jath
+Password: Owner#2345!
+
+Cashier_yoomi
+Password: Cashier#1234!
+
+Cashier_juan
+Password: Cashier#2345!
+
+Owner_maria
+Password: Owner#3456!
