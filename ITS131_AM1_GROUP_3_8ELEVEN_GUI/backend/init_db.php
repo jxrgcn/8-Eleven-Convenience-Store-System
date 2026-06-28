@@ -1,3 +1,4 @@
+-- Active: 1782395609549@@127.0.0.1@3307@eight_eleven_db
 <?php
 header('Content-Type: application/json');
 
@@ -44,11 +45,11 @@ try {
     $userCheck = $pdo->query("SELECT COUNT(*) FROM TB_USERS")->fetchColumn();
     if ($userCheck == 0) {
         $pdo->exec("INSERT INTO TB_USERS (USER_ID, USERNAME, PASSWORD, FULL_NAME, ROLE, ACTIVE, REQUESTED_AT) VALUES 
-            (1, 'owner1',   'Owner#1',   'Alma Sarmiento',  'Owner / Admin', 1, NOW()),
-            (2, 'owner2',   'Owner#2',   'Bea Sarmiento',   'Owner / Admin', 1, NOW()),
-            (3, 'cashier1', 'Cashier#1', 'Ina Santos',      'Cashier',       1, NOW()),
-            (4, 'cashier2', 'Cashier#2', 'Joy Reyes',       'Cashier',       1, NOW()),
-            (5, 'cashier3', 'Cashier#3', 'Kim Cruz',        'Cashier',       1, NOW())");
+            (1, 'Owner_iza',   'Owner#1234!',   'Iza Gabrielle Sarmiento',  'Owner / Admin', 1, NOW()),
+            (2, 'Owner_jath',   'Owner#2345!',   'Jathleen Iffie Rogacion',   'Owner / Admin', 1, NOW()),
+            (3, 'Cashier_yoomi', 'Cashier#1234!', 'Yoo Mi Kang',      'Cashier',       1, NOW()),
+            (4, 'Cashier_juan', 'Cashier#2345!', 'Juan Dela Cruz',       'Cashier',       1, NOW()),
+            (5, 'Cashier_maria', 'Cashier#3456!', 'Maria Clara',        'Owner',       1, NOW())");
     }
     
     // Check if products are empty and seed default products & variants
