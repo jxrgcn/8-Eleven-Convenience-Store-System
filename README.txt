@@ -38,17 +38,17 @@ tb_transaction_items
 Stores the individual products included in each transaction, along with their quantity and subtotal.
 
 Login credentials:
-Owner_iza
+Username: owner1
 Password: Owner#1234!
 
-Owner_jath
+Username: owner2
 Password: Owner#2345!
 
-Cashier_yoomi
-Password: Cashier#1234!
+Username: cashier1
+Password: Cashier#1
 
-Cashier_juan
-Password: Cashier#2345!
+Username: cashier2
+Password: Cashier#2
 
-Owner_maria
-Password: Owner#3456!
+Username: cashier3
+Password: Cashier#3
